@@ -28,3 +28,24 @@ cambios[1].addEventListener("change", filtrarCambio);
 // adicionando evento ao checkbox
 const arCondicionado = document.getElementsByName("ar")[0];
 arCondicionado.addEventListener("change", filtraAr);
+
+
+// funcao para mostrar apenas os veiculos filtrados
+function mostraVeiculos() {
+    let contadorCarros = 0;
+    for (let i = 0; i < veiculos.length; i++) {
+      if (
+        veiculosFiltradosNome.includes(veiculos[i]) &&
+        veiculosFiltradosMarca.includes(veiculos[i]) &&
+        veiculosFiltradosCombustivel.includes(veiculos[i]) &&
+        veiculosFiltradosCambio.includes(veiculos[i]) &&
+        veiculosFiltradosAr.includes(veiculos[i])
+      ) {
+        veiculos[i].style.display = "flex";
+        contadorCarros++;
+      } else {
+        veiculos[i].style.display = "none";
+      }
+    }
+  }
+  
